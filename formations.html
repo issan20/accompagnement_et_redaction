@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formations | RedaKlaB+</title>
+    <meta name="description" content="Formations en recherche documentaire, normes APA, Zotero et outils de collecte de données.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header>
+    <div class="top-header">
+    <div class="logo-left">
+        <img src="images/logo.png" alt="Logo RedaKlaB+" class="logo-img">
+    </div>
+
+    <div class="site-title">
+        <h1>
+            <span class="reda">Reda</span><span class="klab">KlaB</span><span class="plus">+</span>
+        </h1>
+        <p class="slogan">De l'idée à la soutenance, nous donnons forme à vos idées</p>
+    </div>
+</div>
+
+<nav class="main-nav">
+    <ul>
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="service.html" class="nav-link">Services</a></li>
+        <li><a href="formations.html" class="nav-link active">Formations</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="about.html" class="nav-link">À propos</a></li>
+    </ul>
+</nav>
+
+</header>
+
+<main class="container">
+
+    <section class="intro-formation">
+    <h2>Nos Formations</h2>
+    <p>
+        Des formations pratiques destinées aux étudiants et chercheurs souhaitant
+        renforcer leurs compétences méthodologiques et académiques.
+    </p>
+    <p><strong>Formats disponibles :</strong> En ligne – Présentiel – Hybride – Vidéo + support PDF (au choix)</p>
+</section>
+
+<!-- IMAGE GÉNÉRALE -->
+<section class="banniere-formation">
+    <img src="images/formation_pre.webp" alt="Formations académiques" width="100%">
+</section>
+
+
+
+<!-- ================= FORMATION 1 ================= -->
+
+<section class="formation-card">
+     <div class="formation-image">
+    <img src="images/formation_col.webp" alt="Formation collecte de données">
+     </div>
+
+     <div class="formation-content">
+        <h3>Formation aux outils de collecte et de traitement des données</h3>
+        <p>
+            Maîtrisez KoboToolbox, Google Forms et Yakforms pour concevoir des questionnaires professionnels,
+            structurer vos enquêtes et traiter efficacement vos données.
+        </p>
+        <p><strong>Public :</strong> Étudiants, chercheurs</p>
+
+        <a href="https://wa.me/22665475827?text=Bonjour%2C%20je%20souhaite%20m%E2%80%99inscrire%20%C3%A0%20la%20formation%20Outils%20de%20collecte%20et%20traitement%20des%20donn%C3%A9es." class="btn-formation">
+        S’inscrire via WhatsApp
+        </a>
+     </div>
+</section>
+
+<!-- ================= FORMATION 2 ================= -->
+
+<section class="formation-card">
+     <div class="formation-image">
+    <img src="images/formation_zo.jpg" alt="Formation Zotero">
+     </div>
+    
+     <div class="formation-content">
+    <h3>Formation à l’utilisation de Zotero (gestion bibliographique)</h3>
+        <p>
+            Apprenez à organiser vos références, générer automatiquement vos bibliographies
+            et gagner un temps considérable dans la rédaction académique.
+        </p>
+        <p><strong>Public :</strong> Étudiants, chercheurs</p>
+
+        <a href="https://wa.me/22665475827?text=Bonjour%2C%20je%20souhaite%20m%E2%80%99inscrire%20%C3%A0%20la%20formation%20Zotero." class="btn-formation">
+        S’inscrire via WhatsApp
+        </a>
+     </div>
+</section>
+
+<!-- ================= FORMATION 3 ================= -->
+
+<section class="formation-card">
+     <div class="formation-image">
+    <img src="images/formation_apa.png" alt="Formation Normes APA">
+    </div>
+
+     <div class="formation-content">
+   <h3>Formation aux Normes APA 7e édition</h3>
+        <p>
+            Comprenez les exigences des normes APA 7e édition : citations, références,
+            présentation académique et conformité méthodologique.
+        </p>
+        <p><strong>Public :</strong> Étudiants, chercheurs</p>
+
+        <a href="https://wa.me/22665475827?text=Bonjour%2C%20je%20souhaite%20m%E2%80%99inscrire%20%C3%A0%20la%20formation%20Normes%20APA%207e%20%C3%A9dition." class="btn-formation">
+        S’inscrire via WhatsApp
+        </a>
+    </div>
+</section>
+
+<!-- ================= FORMULAIRE D'INSCRIPTION ================= -->
+
+<section class="inscription">
+    <h2>Formulaire d’inscription</h2>
+
+    <form action="https://formspree.io/f/xjgpgpgl" method="POST">
+        <label>Nom complet :</label>
+        <input type="text" name="nom" required>
+
+        <label>Email :</label>
+        <input type="email" name="email" required>
+
+        <label>Formation choisie :</label>
+        <select name="formation" required>
+            <option value="">-- Sélectionner --</option>
+            <option>Outils de collecte et traitement des données</option>
+            <option>Zotero</option>
+            <option>Normes APA 7e édition</option>
+        </select>
+
+        <label>Format souhaité :</label>
+        <select name="format">
+            <option>En ligne</option>
+            <option>Présentiel</option>
+            <option>Hybride</option>
+            <option>Vidéo + PDF</option>
+        </select>
+
+        <label>Message :</label>
+        <textarea name="message"></textarea>
+
+        <button type="submit">Envoyer la demande</button>
+    </form>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 RedaKlaB+ — Tous droits réservés</p>
+</footer>
+
+</body>
+</html>
