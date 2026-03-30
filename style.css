@@ -53,23 +53,29 @@ align-items: center;
 justify-content: center;
 padding: 20px;
 position: relative;
-}
-
-.logo-left {
-position: absolute;
-left: 20px;
+background-color: var(--background);
 }
 
 .logo-img {
+    position: relative;
+    left: 30px;
+    top: 20px;
+    display: inline-block;
 height: 70px;
+width: auto;
+
 }
 
 .site-title {
+position: relative;
+right: 30px;
 text-align: center;
 }
 
 .site-title h1 {
 font-size: 2.2rem;
+position: relative;
+right: 20px;
 font-weight: 700;
 }
 
@@ -78,16 +84,29 @@ color: var(--secondary);
 }
 
 .klab {
-color: var(--primary);
+color: rgb(255, 149, 0);
 }
 
 .plus {
 color: var(--secondary);
 }
+.redaklab {
+    display: inline-block;
+    border-bottom: 2px solid;
+   border-image:  linear-gradient(to right, var(--secondary) 50%, rgb(255, 149, 0) 50% );
+    border-image-slice: 1;
+    padding: 0px 25px;
+    margin-bottom: 0px;
+}
 
 .slogan {
-font-size: 0.9rem;
-margin-top: 5px;
+    display: inline-block;
+    font-size: 0.9rem;
+    position: relative;
+    top: -5px;
+margin-top: 0px;
+padding-top: 0px;
+
 }
 
 /* =========================
