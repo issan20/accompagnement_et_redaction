@@ -2,10 +2,11 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Formations | RedaKlaB+</title>
     <meta
       name="description"
-      content="Formations pratiques sur Zotero, normes APA et outils de collecte/traitement des donnees pour etudiants et chercheurs." />
+      content="Formations pratiques sur Zotero, normes APA et outils de collecte/traitement des données pour étudiants et chercheurs." />
     <link
       rel="canonical"
       href="https://issan20.github.io/accompagnement_et_redaction/formations.html" />
@@ -15,7 +16,7 @@
     <meta property="og:title" content="Formations | RedaKlaB+" />
     <meta
       property="og:description"
-      content="Formations pratiques sur Zotero, normes APA et outils de collecte/traitement des donnees pour etudiants et chercheurs." />
+      content="Formations pratiques sur Zotero, normes APA et outils de collecte/traitement des données pour étudiants et chercheurs." />
     <meta
       property="og:url"
       content="https://issan20.github.io/accompagnement_et_redaction/formations.html" />
@@ -26,7 +27,7 @@
     <meta name="twitter:title" content="Formations | RedaKlaB+" />
     <meta
       name="twitter:description"
-      content="Formations pratiques sur Zotero, normes APA et outils de collecte/traitement des donnees pour etudiants et chercheurs." />
+      content="Formations pratiques sur Zotero, normes APA et outils de collecte/traitement des données pour étudiants et chercheurs." />
     <meta
       name="twitter:image"
       content="https://issan20.github.io/accompagnement_et_redaction/images/formation_pre.webp" />
@@ -54,6 +55,11 @@
             De l'idée à la soutenance, nous donnons forme à vos idées
           </p>
         </div>
+        <button class="hamburger-btn" aria-label="Ouvrir le menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
 
       <nav class="main-nav">
@@ -71,7 +77,7 @@
 
     <main class="container">
       <section class="intro-formation">
-        <h2>Nos Formations</h2>
+        <h1>Nos Formations</h1>
         <p>
           Des formations pratiques destinées aux étudiants et chercheurs
           souhaitant renforcer leurs compétences méthodologiques et académiques.
@@ -172,31 +178,32 @@
         <h2>Formulaire d’inscription</h2>
 
         <form action="https://formspree.io/f/xjgpgpgl" method="POST">
-          <label>Nom complet :</label>
-          <input type="text" name="nom" required />
+          <label for="nom">Nom complet :</label>
+          <input type="text" id="nom" name="nom" required />
 
-          <label>Email :</label>
-          <input type="email" name="email" required />
+          <label for="email">Email :</label>
+          <input type="email" id="email" name="email" required />
 
-          <label>Formation choisie :</label>
-          <select name="formation" required>
+          <label for="formation">Formation choisie :</label>
+          <select id="formation" name="formation" required>
             <option value="">-- Sélectionner --</option>
             <option>Outils de collecte et traitement des données</option>
             <option>Zotero</option>
             <option>Normes APA 7e édition</option>
           </select>
 
-          <label>Format souhaité :</label>
-          <select name="format">
+          <label for="format">Format souhaité :</label>
+          <select id="format" name="format">
             <option>En ligne</option>
             <option>Présentiel</option>
             <option>Hybride</option>
             <option>Vidéo + PDF</option>
           </select>
 
-          <label>Message :</label>
-          <textarea name="message"></textarea>
+          <label for="message">Message :</label>
+          <textarea id="message" name="message"></textarea>
 
+          <input type="hidden" name="_redirect" value="confirmation.html" />
           <button type="submit">Envoyer la demande</button>
         </form>
       </section>
@@ -213,5 +220,6 @@
       </p>
       <p>&copy; 2026 RedaKlaB+ — Tous droits réservés</p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

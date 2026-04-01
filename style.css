@@ -66,6 +66,8 @@ background: inherit;
 .logo-img {
 height: 50px;
 width: auto;
+position: relative;
+left: 25px;
 transition: height 0.6s ease, transform 0.6s ease;
 }
 
@@ -162,7 +164,7 @@ transform: translateY(-50%);
 .hamburger-btn span {
 width: 25px;
 height: 3px;
-background: var(--white);
+background: var(--secondary);
 border-radius: 2px;
 transition: all 0.3s ease;
 display: block;
@@ -238,6 +240,14 @@ text-align: center;
 margin-bottom: 25px;
 color: var(--secondary);
 font-weight: 700;
+}
+
+h1 {
+text-align: center;
+margin-bottom: 25px;
+color: var(--secondary);
+font-weight: 700;
+font-size: 2rem;
 }
 
 h3 {
@@ -522,7 +532,7 @@ padding: 20px 15px;
 flex-direction: column;
 }
 
-.main-nav {#eee
+.main-nav {
 border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 }
