@@ -15,7 +15,7 @@ VARIABLES GLOBALES
 RESET
 ========================= */
 
-{
+* {
 margin: 0;
 padding: 0;
 box-sizing: border-box;
@@ -43,40 +43,59 @@ HEADER
 ========================= */
 
 .site-header {
-background: var(--white);
+position: sticky;
+top: 0;
+z-index: 1000;
+background: var(--background);
 box-shadow: var(--shadow);
+transition: transform 0.6s ease, background 0.6s ease;
+}
+
+.site-header.hidden {
+transform: translateY(-100%);
 }
 
 .top-header {
 display: flex;
 align-items: center;
 justify-content: center;
-padding: 20px;
-position: relative;
-background-color: var(--background);
+padding: 15px 20px;
+background: inherit;
 }
 
 .logo-img {
-    position: relative;
-    left: 30px;
-    top: 20px;
-    display: inline-block;
-height: 70px;
+height: 50px;
 width: auto;
+transition: height 0.6s ease, transform 0.6s ease;
+}
 
+.site-header.hidden .logo-img {
+height: 35px;
+transform: translateX(-40px);
 }
 
 .site-title {
-position: relative;
-right: 30px;
 text-align: center;
+transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
-.site-title h1 {
-font-size: 2.2rem;
-position: relative;
-right: 20px;
+.site-header.hidden .site-title {
+transform: translateX(-60px);
+opacity: 0.7;
+}
+
+.site-title .brand-name {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
+font-size: 1.8rem;
 font-weight: 700;
+transition: font-size 0.6s ease;
+}
+
+.site-header.hidden .site-title .brand-name {
+font-size: 1.3rem;
 }
 
 .reda {
@@ -90,58 +109,124 @@ color: rgb(255, 149, 0);
 .plus {
 color: var(--secondary);
 }
+
 .redaklab {
-    display: inline-block;
-    border-bottom: 2px solid;
-   border-image:  linear-gradient(to right, var(--secondary) 50%, rgb(255, 149, 0) 50% );
-    border-image-slice: 1;
-    padding: 0px 25px;
-    margin-bottom: 0px;
+display: inline-block;
+border-bottom: 2px solid;
+border-image: linear-gradient(to right, var(--secondary) 50%, rgb(255, 149, 0) 50%);
+border-image-slice: 1;
+padding: 0px 15px;
+margin-bottom: 0px;
+transition: padding 0.6s ease;
+}
+
+.site-header.hidden .redaklab {
+padding: 0px 8px;
 }
 
 .slogan {
-    display: inline-block;
-    font-size: 0.9rem;
-    position: relative;
-    top: -5px;
+display: inline-block;
+font-size: 0.75rem;
+position: relative;
+top: -5px;
 margin-top: 0px;
 padding-top: 0px;
+color: var(--text);
+transition: opacity 0.6s ease, font-size 0.6s ease;
+}
 
+.site-header.hidden .slogan {
+opacity: 0;
+font-size: 0;
 }
 
 /* =========================
 NAVIGATION
 ========================= */
 
+.hamburger-btn {
+display: none;
+flex-direction: column;
+gap: 6px;
+background: none;
+border: none;
+cursor: pointer;
+padding: 8px;
+transition: transform 0.3s ease;
+position: absolute;
+right: 20px;
+top: 50%;
+transform: translateY(-50%);
+}
+
+.hamburger-btn span {
+width: 25px;
+height: 3px;
+background: var(--white);
+border-radius: 2px;
+transition: all 0.3s ease;
+display: block;
+}
+
+.hamburger-btn.active span:nth-child(1) {
+transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+opacity: 0;
+}
+
+.hamburger-btn.active span:nth-child(3) {
+transform: rotate(-45deg) translate(8px, -8px);
+}
+
 .main-nav {
 background: var(--white);
 border-top: 1px solid #eee;
+transition: transform 0.6s ease, opacity 0.6s ease;
+overflow: hidden;
+max-height: 500px;
+}
+
+.main-nav.slide-in {
+transform: translateX(0);
+opacity: 1;
 }
 
 .main-nav ul {
 list-style: none;
 display: flex;
 justify-content: center;
-gap: 20px;
-padding: 15px 0;
+gap: 15px;
+padding: 12px 0;
+flex-wrap: wrap;
 }
 
 .nav-link {
 text-decoration: none;
-padding: 8px 18px;
-border-radius: 8px;
+padding: 10px 16px;
+border-radius: 6px;
 font-family: 'Montserrat', sans-serif;
 background: var(--primary);
 color: var(--white);
-transition: 0.3s ease;
+transition: all 0.4s ease;
+display: inline-block;
+font-size: 0.95rem;
+border: 2px solid transparent;
 }
 
 .nav-link:hover {
 background: var(--secondary);
+color: var(--white);
+transform: scale(1.08);
+border-color: var(--primary);
 }
 
 .nav-link.active {
 background: var(--secondary);
+border-color: var(--primary);
+color: var(--white);
+font-weight: 600;
 }
 
 /* =========================
@@ -180,6 +265,17 @@ transition: 0.3s ease;
 a[class^="btn"]:hover,
 button:hover {
 background: var(--secondary);
+}
+
+/* Focus clavier visible pour accessibilite */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+outline: 3px solid #ff9500;
+outline-offset: 2px;
+border-radius: 6px;
 }
 
 /* =========================
@@ -270,6 +366,18 @@ flex-direction: column;
 gap: 15px;
 }
 
+fieldset {
+border: 1px solid #d5d5d5;
+border-radius: 8px;
+padding: 20px;
+}
+
+legend {
+padding: 0 8px;
+font-family: 'Montserrat', sans-serif;
+color: var(--secondary);
+}
+
 input, select, textarea {
 padding: 10px;
 border-radius: 6px;
@@ -304,40 +412,118 @@ RESPONSIVE
 ========================= */
 
 @media (max-width: 992px) {
-    .formation-card {
-    flex-direction: column;
-    text-align: center;
+.formation-card {
+flex-direction: column;
+text-align: center;
 }
 
 .formation-image img {
-    width: 100%;
-    height: auto;
+width: 100%;
+height: auto;
 }
 
 .categorie-image img {
-    width: 100%;
-    height: auto;
+width: 100%;
+height: auto;
 }
 
 .main-nav ul {
-    flex-wrap: wrap;
-    gap: 10px;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+.hamburger-btn {
+display: flex;
 }
 }
 
+@media (max-width: 768px) {
+.top-header {
+padding: 12px;
+position: relative;
+}
 
+.site-title .brand-name {
+font-size: 1.9rem;
+gap: 10px;
+}
+
+.main-nav {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+right: 0;
+width: 100%;
+max-height: none;
+background: var(--background);
+border-top: 1px solid #eee;
+}
+
+.main-nav.active {
+display: block;
+animation: slideDown 0.6s ease forwards;
+}
+
+@keyframes slideDown {
+from {
+transform: translateX(100%);
+opacity: 0;
+}
+to {
+transform: translateX(0);
+opacity: 1;
+}
+}
+
+.main-nav ul {
+flex-direction: column;
+gap: 8px;
+padding: 12px;
+}
+
+.nav-link {
+padding: 10px 14px;
+display: block;
+text-align: center;
+}
+
+.hamburger-btn {
+display: flex;
+}
+}
 
 @media (max-width: 600px) {
-.site-title h1 {
-    font-size: 1.6rem;
+.site-title .brand-name {
+font-size: 1.6rem;
+gap: 8px;
+flex-wrap: wrap;
 }
 
 .logo-img {
-    height: 55px;
+height: 45px;
+}
+
+.site-header.hidden .logo-img {
+height: 30px;
+}
+
+.slogan {
+top: 0;
+margin-top: 8px;
+font-size: 0.65rem;
 }
 
 .container {
-    padding: 20px 15px;
+padding: 20px 15px;
+}
+
+.main-nav ul {
+flex-direction: column;
+}
+
+.main-nav {#eee
+border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 }
 
